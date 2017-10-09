@@ -42,7 +42,7 @@ flipOutlines :: [OutlineEntry] -> [OutlineEntry]
 flipOutlines [] = []
 flipOutlines (OutlineEntry page title children : xs) =
     flipOutlines xs ++ [OutlineEntry page title (flipOutlines children)]
- 
+
 outlinesFile :: Parser [OutlineEntry]
 outlinesFile = do
     spaces

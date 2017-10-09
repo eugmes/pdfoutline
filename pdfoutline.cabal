@@ -1,6 +1,6 @@
 name:                pdfoutline
 version:             0.1.0.0
-synopsis:            Adds outlines to pdf files 
+synopsis:            Adds outlines to pdf files
 license:             PublicDomain
 author:              Eugeniy Meshcheryakov
 maintainer:          eugen@debian.org

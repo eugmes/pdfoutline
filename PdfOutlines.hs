@@ -9,7 +9,7 @@ module PdfOutlines ( OutlineEntry(..)
 import Data.String
 import Pdf.Toolbox.Core
 
-data OutlineEntry = OutlineEntry Int String [OutlineEntry] 
+data OutlineEntry = OutlineEntry Int String [OutlineEntry]
     deriving Show
 
 data PdfOutlineTreeEntry = PdfOutlineTreeEntry Ref Dict [PdfOutlineTreeEntry]
@@ -39,7 +39,7 @@ numberTree firstIndex ents =
         numberTreeRec idx' xs $ PdfOutlineTreeEntry (Ref idx 0) dict children' : result
       where
         (idx', children') = numberTreeRec (idx + 1) children []
-                
+
 linkDepth :: Ref -> PdfOutlineTreeEntry -> PdfOutlineTreeEntry
 linkDepth parent (PdfOutlineTreeEntry ref dict children) =
     PdfOutlineTreeEntry ref (setValueForKey "Parent" (ORef parent) dict') (map (linkDepth ref) children)
